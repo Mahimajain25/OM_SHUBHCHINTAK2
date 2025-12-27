@@ -1,0 +1,227 @@
+/* Default menu link color */
+.navbar-nav .nav-link {
+  color: #000000 !important; /* override Bootstrap default */
+  font-weight: 500;
+  margin: 0 0.5rem;
+  transition: color 0.3s; /* smooth color change */
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:focus {
+  color: green !important;
+}
+.navbar-nav .nav-link:hover {
+  color: rgb(64, 128, 0) !important;
+}
+
+/* Big logo on right */
+.navbar .navbar-brand img {
+  height: 5rem; /* adjust for bigger logo */
+}
+
+/* Button */
+.btn-custom {
+  background-color: #6c757d; /* secondary color */
+  color: #fff;
+} 
+
+/* Navbar background and opacity */
+.navbar {
+  background-color: #ffffff;
+  opacity: 0.95;
+}
+
+/* Menu link color */
+.navbar-nav .nav-link {
+  color: #0d6efd;
+  font-weight: 500;
+  margin: 0 0.5rem;
+}
+
+/* ################ */
+.home-section {
+  height: 100vh;
+  background-image: url('../images/OM_Brochure_img.png');
+  background-size: 1400px 900px; /* 👈 width height */
+  background-position: center;     /* keeps image centered */
+  background-repeat: no-repeat;
+  
+  padding-top: 5%;        /* 👈 space below navbar */
+  padding-left: 5%;
+  
+  display: flex;
+  align-items: flex-start;   
+  justify-content: flex-start;
+  position: relative; 
+}
+/* Text container */
+.home-section .container {
+  max-width: 1300px;          /* 👈 controls text width */
+  text-align: left;
+  margin-top: 500;
+  position: absolute;          /* 👈 THIS is the key */
+  top: 90px;          
+}
+
+
+.home-title-box {
+  display: inline-block;
+  background-color: rgb(246, 245, 241,0.8);
+  padding: 5px 10px;
+  min-width: 200px;     /* 👈 control width */
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.home-title {
+  font-size: 3rem;
+  /* font-family: 'Playfair Display', serif;  👈 new font */
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: left;
+  display: inline-block;
+  letter-spacing: 1px;
+
+  /* Gradient inside text */
+  background: linear-gradient(
+    90deg,
+    #CBAE5A, 
+    #CBAE5A, 
+    #CBAE5A,       /* muted gold start */
+    #1C1E5E,      /* dark blue shine */
+    #CBAE5A,
+    #CBAE5A,
+    #CBAE5A        /* muted gold end */
+  );
+  background-size: 200% 100%;   /* make gradient larger for animation */
+  color: transparent;           /* hide original text color */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Animate gradient horizontally */
+  animation: shineInside 10s linear infinite;
+}
+
+/* Keyframes for horizontal shine inside text */
+@keyframes shineInside {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.home-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+
+.btn-wrapper {
+  display: flex;             /* enables flexbox */
+  justify-content: center;   /* centers horizontally */
+  align-items: center;       /* centers vertically */
+  margin-top: 1rem;          /* optional spacing */
+}
+
+.home-section .btn-custom {
+  background-color: #1C1E5E;
+  color: #ffffff;
+  padding: 0.6rem 1.6rem;    
+  font-size: 1.1rem;
+  border-radius: 5px;
+  text-decoration: none;     
+  cursor: pointer;
+  display: inline-block;      
+}
+
+
+.home-location {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1C1E5E;       /* your dark blue */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: left;
+  position: relative;
+  display: block;
+  text-align: center;
+}
+
+/* Custom underline */
+.location-underline {
+  display: block;
+  width: 250px;        /* underline length */
+  height: 3px;         /* underline thickness */
+  background-color: #CBAE5A; /* muted gold */
+  margin-top: 6px;
+  margin: 6px auto 0;
+}
+
+.home-tagline {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1C1E5E;       /* your dark blue */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: left;
+  position: relative;
+  display: block;
+  text-align: center;
+}
+
+.btn-below-text {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #333;
+  text-align: center;  /* ensures the text below is centered */
+}
+
+/* Modal background */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5); /* semi-transparent background */
+}
+
+/* Modal content box */
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto; /* centers vertically with top margin */
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Style inputs inside modal */
+.modal-content input, 
+.modal-content textarea {
+  width: 90%;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
